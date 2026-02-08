@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "DreadFont";
+    src: url("media/font.ttf");
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.title {
+    font-size: 5rem;
+    letter-spacing: 8px;
+    text-shadow: 0 0 25px red;
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: -10px;
+    font-size: 1.4rem;
+    opacity: 0.85;
+}
+
+.btn-main {
+    margin-top: 20px;
+    padding: 12px 26px;
+    font-size: 1.2rem;
+    border: 2px solid red;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: red;
+}
+
+/* SECCIÓN DE PERSONAJES */
+.characters {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.char-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.char-card {
+    background: #111;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 260px;
+    transition: transform 0.3s;
+}
+
+.char-card img {
+    width: 100%;
+}
+
+.char-card:hover {
+    transform: translateY(-10px);
+}
+
+/* NOVEDADES */
+.news {
+    padding: 80px 40px;
+}
+
+.news-list {
+    display: grid;
+    gap: 30px;
+}
+
+.news-item {
+    background: #111;
+    padding: 20px;
+    border-left: 4px solid red;
+    animation: fadeUp 1s ease both;
+}
+
+/* FOOTER */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #0a0a0a;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
